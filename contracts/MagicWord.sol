@@ -11,7 +11,7 @@ contract MagicWord is ReentrancyGuard, Pausable, Ownable {
 
     uint public enterTicket = 1 ether;
     uint public balance;
-    bytes32 magicWord = 0x9d2c6536cf2a19f4992beb1d77f371edb40d115f24ad4c1837a6e086767a7986;
+    bytes32 private magicWord = 0x9d2c6536cf2a19f4992beb1d77f371edb40d115f24ad4c1837a6e086767a7986;
 
     mapping(address => bool) public players;
     mapping(address => uint) public tickets;
