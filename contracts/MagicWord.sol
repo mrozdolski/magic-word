@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 // MagicWord SmartContract that uses keccak256 :: github.com/mrozdolski
 // Feel free to modify the contract according to your needs.
-contract MagicWordGame is ReentrancyGuard, Pausable, Ownable {
+contract MagicWord is ReentrancyGuard, Pausable, Ownable {
 
     uint public enterTicket = 1 ether;
     uint public balance;
