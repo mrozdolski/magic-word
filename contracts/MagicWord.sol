@@ -54,7 +54,7 @@ contract MagicWord is ReentrancyGuard, Pausable, Ownable {
         }
     }
 
-    // Here you can encrypt your word in keccak256
+    // Here you can hash your word in keccak256
     function hashWord(string memory _word) external pure returns (bytes32) {
         return keccak256(abi.encodePacked(_word));
     }   
