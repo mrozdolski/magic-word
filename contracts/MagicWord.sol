@@ -15,7 +15,7 @@ contract MagicWordGame is ReentrancyGuard, Pausable, Ownable {
     mapping(address => uint) public tickets;
 
     constructor() payable {
-        balance = enterTicket;
+        balance = msg.value;
     }
 
     modifier onlyPlayers() {
