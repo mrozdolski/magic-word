@@ -40,12 +40,12 @@ contract MagicWordGame is ReentrancyGuard, Pausable, Ownable {
 
     function guess(string memory _word) public onlyPlayers nonReentrant whenNotPaused {
         if (keccak256(abi.encodePacked(_word)) == magicWord) {
-
-            (bool success,) = msg.sender.call{value: balance}("");
-            require(success, "Failed to send ether");
              
             tickets[msg.sender] -= 1;
             balance = 0;
+
+            (bool success, ) = msg.sender.call{value: balance}("");
+            require(success, "Failed to send ether");
         } else {
             tickets[msg.sender] -= 1;
         }
